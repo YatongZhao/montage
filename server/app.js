@@ -6,6 +6,7 @@ const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 const isProd = process.env.NODE_ENV === 'production';
+const PORT = require('../global.conf.js').PORT;
 
 MongoDB.init();
  
@@ -18,6 +19,6 @@ isProd || app.use(cors());
 app.use('/api', route);
 isProd && app.use('', express.static(path.join(__dirname, '../build')));
 
-app.listen(8081, () => {
+app.listen(PORT, () => {
     console.log('App is now running on port 8081.');
 });

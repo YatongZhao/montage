@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = require('../passport.conf.js').DB_URL;
+const url = require('../global.conf.js').DB_URL;
 
 module.exports = {
     init () {
