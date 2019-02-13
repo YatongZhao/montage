@@ -35,14 +35,26 @@ const App = () => {
           </div>
         </li>
         <li className="main-item">
-          <div>
+          <div className="title">
             Company's Introduction
           </div>
-          <div>
+          <div className="company-introduction">
             Montage Trip will convert vacation itinerary into a short personalized preview video featuring what travelers can expect during the real trip before booking. Montage Trip will filter the best travel videos people shared, and compile to a unique short preview video for users based on planned itinerary, personal preference, and previous experience. The generated video will allow users to experience the adventure before booking and provide users with the excitement of being a prepared traveler.
           </div>
         </li>
-        <li className="main-item">Team Member</li>
+        <li className="main-item">
+          <div className="title">
+            Team Member
+          </div>
+          <div className="member-box">
+            <ul className="member-list">
+              <li className="member-item"><div className="avatar"></div><span>Rachael Huff</span></li>
+              <li className="member-item"><div className="avatar"></div><span>Ruoyu Li</span></li>
+              <li className="member-item"><div className="avatar"></div><span>Ye Zhang</span></li>
+              <li className="member-item"><div className="avatar"></div><span>Chuhan (Kevin) Zhou</span></li>
+            </ul>
+          </div>
+        </li>
       </ul>
       <footer className="footer">
         <div className="form">
@@ -59,15 +71,16 @@ const App = () => {
             <span>email:</span>
             <input className="email" type="email"/>
           </div>
-          <div>
-            Wanna join our team?
+          <div className="item-radio">
+            <span>
+              Wanna join our team?
+            </span>
+            <span>
+              yes<input type="radio" name="join" value="yes" />
+              no<input type="radio" name="join" value="no" />
+            </span>
           </div>
-          <select>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option selected value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
-          </select>
+          <button className="submit">submit</button>
         </div>
       </footer>
     </div>

@@ -102,16 +102,20 @@ body {
   min-height: 8rem;
 }
 .main-item {
-  min-height: 500px;
+  /* min-height: 500px; */
+  overflow: hidden;
 }
 
 .main-item .example-box {
-  padding: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 1rem 0;
   display: flex;
   justify-content: center;
 }
 .main-item .example {
-  width:60%;
+  width:90%;
+  min-width: 23rem;
+  max-width: 70rem;
   padding: 10px;
   background-color: #fff;
   border-radius: 1rem;
@@ -120,14 +124,75 @@ body {
   width: 100%;
 }
 
+.main-item .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.main-item .company-introduction {
+  padding: 1rem 1.4rem 0;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-spacing: .2rem;
+  /* color: rgba(255, 255, 255, .9); */
+  font-weight: 200;
+}
+
+.main-item .member-box {
+  overflow: scroll;
+  padding: 1rem .5rem 0;
+}
+.main-item .member-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-item .member-list .member-item {
+  width: 20%;
+  min-width: 11rem;
+  min-height: 8rem;
+  background: #fff;
+  margin: 0 .5rem;
+  padding-top: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  word-spacing: .2rem;
+  /* color: rgba(255, 255, 255, .9); */
+  font-weight: 200;
+
+  /* border-radius: .5rem; */
+}
+
+.main-item .member-list .member-item .avatar {
+  width: 3rem;
+  height: 3rem;
+  /* background: #000; */
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
 .footer {
   /* height: 300px; */
   background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: .5rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
 }
 .footer .form {
   width: 21rem;
@@ -140,19 +205,41 @@ body {
 .footer .form .title {
   padding: .5rem 0rem;
 }
-.footer .form .item {
+.footer .form .item{
   width: 100%;
   margin: .3rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 200;
 }
+.footer .form .item-radio {
+  width: 100%;
+  margin: .3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
 .footer .form .item input {
   margin-left: 1rem;
   outline: none;
   border: none;
   width: 14rem;
   height: 1.5rem;
+  text-indent: 1rem;
+}
+.footer .form .submit {
+  width: 100%;
+  border: none;
+  background: #666;
+  /* border-radius: .2rem; */
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  outline: none;
+  font-weight: 200;
+  color: orange;
 }
