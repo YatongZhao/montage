@@ -12,7 +12,7 @@
 /build
 
 # personal config
-passport.conf.js
+global.conf.js
 
 # misc
 .DS_Store
