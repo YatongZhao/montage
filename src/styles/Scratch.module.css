@@ -1,0 +1,33 @@
+.Scratch {
+    height: 100%;
+    background: repeating-linear-gradient(
+      10deg,
+      rgba(255, 255, 255, 0) 0px,
+      rgba(255, 255, 255, 0) 20px,
+      rgba(0, 0, 0, 0.05) 20px,
+      rgba(0, 0, 0, 0.05) 22px
+    ),repeating-linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 0px,
+        rgba(255, 255, 255, 0) 20px,
+        rgba(0, 0, 0, 0.1) 20px,
+        rgba(0, 0, 0, 0.1) 22px
+      );
+    box-shadow: inset 0 9px 0px rgba(0, 0, 0, .3);
+    color: rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    padding: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: cursive;
+    outline: none;
+    line-height: 30px;
+}
+.Box {
+    position: absolute;
+    /* z-index: -1; */
+    bottom: 0;
+    width: 100%;
+    height: 360px;
+    background-color: #fff;
+}

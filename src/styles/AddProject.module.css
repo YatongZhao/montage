@@ -1,0 +1,23 @@
+.AddProject {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    top: 40px;
+    width: calc(80% - 20px);
+    transition: all 0.3s;
+}
+.AddProject.active {
+    transform: translateX(-50%);
+}
+.AddProject input {
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 52px;
+    border: 5px solid black;
+    font-size: 30px;
+    /* text-indent: 1em; */
+    text-align: center;
+    /* min-width: 300px; */
+}

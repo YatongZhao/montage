@@ -1,0 +1,123 @@
+
+.ProjectList {
+  position: absolute;
+  left: 10px;
+  top: 100px;
+}
+.UndoneProjectList, .DoneProjectList, .DeleteProjectList {
+  width: 350px;
+  padding: 5px 0;
+  line-height: 22px;
+  font-size: 14px;
+  border-radius: 7px;
+}
+
+.UndoneProjectList {
+  background: linear-gradient(
+    0deg,
+    rgba(102, 102, 102, 1) calc(5px),
+    rgba(255, 255, 255, 0.3) calc(5px),
+    rgba(255, 255, 255, 0.3) calc(100% - 5px),
+    rgba(102, 102, 102, 1) calc(100% - 5px)
+  );
+  color: rgba(51, 51, 51, 1);
+}
+.DoneProjectList {
+  margin-top: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(102, 102, 102, 1) calc(5px),
+    rgba(255, 255, 255, 0.3) calc(5px),
+    rgba(255, 255, 255, 0.3) calc(100% - 5px),
+    rgba(102, 102, 102, 1) calc(100% - 5px)
+  );
+  color: rgba(51, 51, 51, 1);
+}
+.DeleteProjectList {
+  margin-top: 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(153, 153, 153, 1) calc(5px),
+    rgba(153, 153, 153, 0.3) calc(5px),
+    rgba(153, 153, 153, 0.3) calc(100% - 5px),
+    rgba(153, 153, 153, 1) calc(100% - 5px)
+  );
+  color: rgba(0, 0, 0, .8);
+}
+
+.UndoneProjectList li,
+.DoneProjectList li,
+.DeleteProjectList li {
+  padding-left: 20px;
+  position: relative;
+}
+.UndoneProjectList li::before,
+.DoneProjectList li::before,
+.DeleteProjectList li::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.UndoneProjectList li::before {
+  background-color: rgba(153, 153, 153);
+}
+.DoneProjectList li::before {
+  background-color: rgba(153, 153, 153);
+}
+.DeleteProjectList li::before {
+  background-color: rgba(153, 153, 153);
+}
+
+.UndoneProjectList li:nth-child(2n + 1),
+.DoneProjectList li:nth-child(2n + 1) {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.DeleteProjectList li:nth-child(2n + 1) {
+  background-color: #eee;
+}
+
+.UndoneProjectList li:nth-child(2n),
+.DoneProjectList li:nth-child(2n) {
+  background-color: rgba(204, 204, 204, 1);
+}
+.DeleteProjectList li:nth-child(2n) {
+  background-color: #ccc;
+}
+.UndoneProjectList li.active::before {
+  background-color: black;
+}
+
+.UndoneProjectList li.current::after {
+  content: 'current';
+  float: right;
+  padding: 0 10px;
+  border-left: 1px solid rgba(255, 255, 255, .8);
+  background-color: rgba(153, 153, 153, 0.9);
+  margin-right: 15px;
+  color: white;
+  border-radius: 2px;
+}
+
+li .button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  opacity: 0;
+  transition: all 0.3s;
+}
+li:hover .button {
+  opacity: 1;
+}
