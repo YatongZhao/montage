@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import logo from './images/logo-1600x900.png';
+import example1 from './images/WechatIMG89.png';
 
 const App = () => {
 
@@ -27,10 +28,18 @@ const App = () => {
         </div>
       </div>
       <ul className="main">
+        <li className="main-item">
+          Example
+          <div className="example-box">
+            <div className="example">
+              <img src={example1} alt=""/>
+            </div>
+          </div>
+        </li>
         <li className="main-item">Company's Introduction</li>
         <li className="main-item">Team Member</li>
-        <li className="main-item">Example</li>
       </ul>
+      <footer className="footer"></footer>
     </div>
   );
 }
