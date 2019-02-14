@@ -149,7 +149,7 @@ const App = () => {
       </ul>
       <footer className="footer">
         <div className="form">
-          <div className="title">CONTACT US</div>
+          <div className="title">Wanna be the first try out？</div>
           <div className="item">
             <span>first name:</span>
             <input className="first-name" type="text" value={firstName} onChange={e => {setFirstName(e.target.value); setPrompt('');}}/>
