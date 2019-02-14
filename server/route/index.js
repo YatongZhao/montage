@@ -26,7 +26,7 @@ function genParamChecker (type, params) {
     return (req, res, next) => {
         for (let index in params) {
             let paramater = params[index];
-            if (!req[paramsHolder][paramater]) {
+            if (req[paramsHolder][paramater] === undefined) {
                 return res.json({ code: -100, msg: `缺少 ${paramater} 参数.` });
             }
         }
