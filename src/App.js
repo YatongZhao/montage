@@ -1,32 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import logo from './images/logo-1600x900.png';
-import example2 from './images/WechatIMG112.png';
-import example3 from './images/WechatIMG113.png';
-
-import avatar1 from './images/WechatIMG143.png';
-import avatar2 from './images/WechatIMG144.png';
-import avatar3 from './images/WechatIMG145.png';
-import avatar4 from './images/WechatIMG146.png';
 
 const members = [
   {
-    avatar: avatar1,
+    avatar: 'https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG144.png',
     name: 'Rachael Huff',
     desc: `Rachael's background includes a degree in marketing. She has extensive experience running marketing.`
   },
   {
-    avatar: avatar2,
+    avatar: 'https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG143.png',
     name: 'Ruoyu Li',
     desc: `Ruoyu Li  is a senior at the University of Arizona, his majors are Mathematics with emphasis Economics and Business, and Information Science and Technology`
   },
   {
-    avatar: avatar3,
+    avatar: 'https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG145.png',
     name: 'Ye Zhang',
     desc: `U of A Ph.D. student With a strong engineering technology background and interest in traveling, he is mainly contributing to the technology support and corporation strategy`
   },
   {
-    avatar: avatar4,
+    avatar: 'https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG146.png',
     name: 'Chuhan (Kevin) Zhou',
     desc: `Kevin is a multilingual international student major in Management and Entrepreneurship; also minor in Japanese and Psychology. He has abundant work and volunteer experiences`
   }
@@ -65,10 +58,10 @@ const App = () => {
               <img src="https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG89.png" alt=""/>
             </div>
             <div className="example">
-              <img src={example2} alt=""/>
+              <img src='https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG112.png' alt=""/>
             </div>
             <div className="example">
-              <img src={example3} alt=""/>
+              <img src='https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG113.png' alt=""/>
             </div>
           </div>
         </li>

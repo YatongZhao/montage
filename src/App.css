@@ -24,7 +24,7 @@ body {
 }
 .banner {
   height: 100%;
-  background-image: url('./images/dark-1838340-small.png');
+  background-image: url('https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/dark-1838340-small.png');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
