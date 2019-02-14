@@ -146,18 +146,19 @@ body {
 }
 
 .main-item .member-box {
-  overflow: scroll;
+  /* overflow: scroll; */
   padding: 1rem .5rem 0;
 }
 .main-item .member-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
 }
 
 .main-item .member-list .member-item {
   width: 20%;
-  min-width: 11rem;
+  min-width: 15rem;
   min-height: 8rem;
   background: #fff;
   margin: 0 .5rem;
