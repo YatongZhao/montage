@@ -4,6 +4,34 @@ import logo from './images/logo-1600x900.png';
 import example2 from './images/WechatIMG112.png';
 import example3 from './images/WechatIMG113.png';
 
+import avatar1 from './images/WechatIMG143.png';
+import avatar2 from './images/WechatIMG144.png';
+import avatar3 from './images/WechatIMG145.png';
+import avatar4 from './images/WechatIMG146.png';
+
+const members = [
+  {
+    avatar: avatar1,
+    name: 'Rachael Huff',
+    desc: `Rachael's background includes a degree in marketing. She has extensive experience running marketing.`
+  },
+  {
+    avatar: avatar2,
+    name: 'Ruoyu Li',
+    desc: `Ruoyu Li  is a senior at the University of Arizona, his majors are Mathematics with emphasis Economics and Business, and Information Science and Technology`
+  },
+  {
+    avatar: avatar3,
+    name: 'Ye Zhang',
+    desc: `U of A Ph.D. student With a strong engineering technology background and interest in traveling, he is mainly contributing to the technology support and corporation strategy`
+  },
+  {
+    avatar: avatar4,
+    name: 'Chuhan (Kevin) Zhou',
+    desc: `Kevin is a multilingual international student major in Management and Entrepreneurship; also minor in Japanese and Psychology. He has abundant work and volunteer experiences`
+  }
+]
+
 const App = () => {
 
   return (
@@ -58,10 +86,15 @@ const App = () => {
           </div>
           <div className="member-box">
             <ul className="member-list">
-              <li className="member-item"><div className="avatar"></div><span>Rachael Huff</span></li>
-              <li className="member-item"><div className="avatar"></div><span>Ruoyu Li</span></li>
-              <li className="member-item"><div className="avatar"></div><span>Ye Zhang</span></li>
-              <li className="member-item"><div className="avatar"></div><span>Chuhan (Kevin) Zhou</span></li>
+              {members.map(item => (
+                <li className="member-item">
+                  <div className="avatar"><img src={item.avatar} alt=""/></div>
+                  <span>{item.name}</span>
+                  <div className="desc">
+                    {item.desc}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </li>
@@ -93,7 +126,7 @@ const App = () => {
           <button className="submit">submit</button>
         </div>
       </footer>
-      <div style={{height: '10rem'}}></div>
+      <div style={{height: '11.5rem'}}></div>
     </div>
   );
 }
