@@ -30,7 +30,7 @@ const App = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [join, setJoin] = useState(true);
+  const [join, setJoin] = useState(false);
 
   const [prompt, setPrompt] = useState('');
 
