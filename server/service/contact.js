@@ -6,6 +6,7 @@ const addContact = (req, res) => {
         firstName,
         lastName,
         email,
+        join,
         date: new Date(),
         isDeleted: false
     })
