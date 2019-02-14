@@ -3,6 +3,8 @@ const route = express.Router();
 const { addProject, listProject, doneProject, undoneProject } = require('../service/project');
 const { addStamp, getStamps } = require('../service/stamp');
 
+const { addContact, listContact } = require('../service/contact');
+
 /**
  * 
  * @param {String} type - post|get
@@ -15,7 +17,7 @@ function genParamChecker (type, params) {
         case 'post':
             paramsHolder = 'body';
             break;
-        case 'post':
+        case 'get':
             paramsHolder = 'params';
             break;
         default:
@@ -43,5 +45,9 @@ route.post('/project/undone',
 route.post('/stamp/add',
     genParamChecker('post', ['nextId']), addStamp);
 route.get('/stamp/get', getStamps);
+
+route.post('/contact/add',
+    genParamChecker('post', ['firstName', 'lastName', 'email', 'join']), addContact);
+route.get('/contact/list', listContact);
 
 module.exports = route;

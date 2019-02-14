@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import logo from './images/logo-1600x900.png';
+import axios from './axios';
 
 const members = [
   {
@@ -27,6 +27,68 @@ const members = [
 
 const App = () => {
 
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [join, setJoin] = useState(true);
+
+  const [prompt, setPrompt] = useState('');
+
+  const pattern = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/;
+
+  function validate () {
+    if (firstName.trim().length === 0) {
+      return setPrompt(`First name can't be empty!`);
+    } else if (lastName.trim().length === 0) {
+      return setPrompt(`Last name cant't be empty!`);
+    } else if (email.trim().length === 0) {
+      return setPrompt(`Email can't be empty!`);
+    } else if (!pattern.test(email.trim())) {
+      return setPrompt(`Wrong email pattern!`);
+    } else {
+      setPrompt('');
+      return true;
+    }
+
+  }
+  function handleSubmit () {
+    console.log('submit')
+    if (!validate()) return;
+    axios({
+      method: 'post',
+      url: '/contact/add',
+      data: {
+        firstName,
+        lastName,
+        email,
+        join
+      }
+    })
+    .then(({ data }) => {
+      if (data.code === 0) {
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setJoin(true);
+        setPrompt('');
+        Toast();
+      }
+    })
+    .catch(error => {
+      setPrompt('Network Error!');
+      console.log(error);
+    })
+  }
+
+  const [toast, setToast] = useState(false);
+  function Toast () {
+    if (toast) return;
+    setToast(true);
+    setTimeout(() => {
+      setToast(false);
+    }, 2000);
+  }
+
   return (
     <div className="App">
       <div className="banner-outer">
@@ -38,13 +100,6 @@ const App = () => {
         <div className="logo">
           <img src='https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/logo-1600x900.png' alt=""/>
         </div>
-        {/* <div className="nav-box">
-          <ul className="nav">
-            <li className="nav-item">Company's Introduction</li>
-            <li className="nav-item">Team Member</li>
-            <li className="nav-item">Example</li>
-          </ul>
-        </div> */}
       </header>
       <div className="description">
         <div className="inner">
@@ -97,29 +152,31 @@ const App = () => {
           <div className="title">CONTACT US</div>
           <div className="item">
             <span>first name:</span>
-            <input className="first-name" type="text"/>
+            <input className="first-name" type="text" value={firstName} onChange={e => {setFirstName(e.target.value); setPrompt('');}}/>
           </div>
           <div className="item">
             <span>last name:</span>
-            <input className="last-name" type="text"/>
+            <input className="last-name" type="text" value={lastName} onChange={e => {setLastName(e.target.value); setPrompt('');}}/>
           </div>
           <div className="item">
             <span>email:</span>
-            <input className="email" type="email"/>
+            <input className="email" type="email" value={email} onChange={e => {setEmail(e.target.value); setPrompt('');}}/>
           </div>
           <div className="item-radio">
             <span>
               Wanna join our team?
             </span>
             <span>
-              yes<input type="radio" name="join" value="yes" />
-              no<input type="radio" name="join" value="no" />
+              yes<input type="radio" name="join" checked={join} onChange={e => setJoin(true)} />
+              no<input type="radio" name="join" checked={!join} onChange={e => setJoin(false)} />
             </span>
           </div>
-          <button className="submit">submit</button>
+          <span className={["prompt", prompt === 'Success!' ? 'success': ''].join(' ')}>{prompt}</span>
+          <button className="submit" onClick={handleSubmit}>submit</button>
         </div>
       </footer>
       <div style={{height: '11.5rem'}}></div>
+      <div className="toast" style={{opacity: toast ? '1' : '0'}}>Added success!</div>
     </div>
   );
 }
