@@ -36,7 +36,7 @@ const App = () => {
       <div className="top"></div>
       <header className="header">
         <div className="logo">
-          <img src={logo} alt=""/>
+          <img src='https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/logo-1600x900.png' alt=""/>
         </div>
         {/* <div className="nav-box">
           <ul className="nav">
