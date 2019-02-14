@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import logo from './images/logo-1600x900.png';
+import example2 from './images/WechatIMG112.png';
+import example3 from './images/WechatIMG113.png';
 
 const App = () => {
 
   return (
     <div className="App">
-      <div className="banner"><div className="banner-inner"></div></div>
+      <div className="banner-outer">
+        <div className="banner"><div className="banner-inner"></div></div>
+      </div>
       <div className="header-bg"></div>
       <div className="top"></div>
       <header className="header">
@@ -32,6 +36,12 @@ const App = () => {
             <div className="example">
               <img src="https://raw.githubusercontent.com/YatongZhao/montage/master/src/images/WechatIMG89.png" alt=""/>
             </div>
+            <div className="example">
+              <img src={example2} alt=""/>
+            </div>
+            <div className="example">
+              <img src={example3} alt=""/>
+            </div>
           </div>
         </li>
         <li className="main-item">
@@ -42,7 +52,7 @@ const App = () => {
             Montage Trip will convert vacation itinerary into a short personalized preview video featuring what travelers can expect during the real trip before booking. Montage Trip will filter the best travel videos people shared, and compile to a unique short preview video for users based on planned itinerary, personal preference, and previous experience. The generated video will allow users to experience the adventure before booking and provide users with the excitement of being a prepared traveler.
           </div>
         </li>
-        <li className="main-item">
+        <li className="main-item member">
           <div className="title">
             Team Member
           </div>
@@ -83,6 +93,7 @@ const App = () => {
           <button className="submit">submit</button>
         </div>
       </footer>
+      <div style={{height: '10rem'}}></div>
     </div>
   );
 }
